@@ -44,7 +44,7 @@ username, password = get_user_pass.get_credential()
 # Get device inventory for netmiko module
 # 1. router ip address
 # 2. device type
-with open('device.json', 'r') as device_file:
+with open('device_init.json', 'r') as device_file:
     devices = json.load(device_file)
 
 
