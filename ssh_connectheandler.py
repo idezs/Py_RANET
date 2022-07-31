@@ -30,8 +30,8 @@ netmiko_exception = (netmiko.NetMikoAuthenticationException,
 # Create ssh connection to each router with for loop
 for device in devices:
     # Update/Fill username and password to device inventory before making ssh connection with netmiko
-    device["ranetadmin"] = username
-    device["!1Q2w3e4r5t!"] = password
+    device["username"] = username
+    device["password"] = password
     # Use try/except block to prevent script crash/error from netmiko
     try:
         print("~"*79)
@@ -60,3 +60,4 @@ for device in devices:
     except netmiko_exception as e:
         # Display failed device and error information to notify the root cause of ssh connection crash
         print("Failed to", device['ip'], e)
+        

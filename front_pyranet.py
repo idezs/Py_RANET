@@ -6,6 +6,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import cmp_output
+import cmd_collector
 
 msg_cmp = cmp_output.cmp_files()
 
