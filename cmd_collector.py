@@ -17,13 +17,13 @@ dts = date.strftime("%d-%m-%Y" + ' ' + "%H-%M-%S")
 dt = date.strftime("%d-%m-%Y" + ' ' + "%H-%M")
 ts = date.strftime("%d-%m-%Y")
 
-def pm_function():
+def cisco_pm_function(site_selected):
     # Get user credential from user input
     username, password = get_user_pass.get_credential()
     # Get device inventory for netmiko module
     # 1. router ip address
     # 2. device type
-    with open('device.json', 'r') as device_file:
+    with open(site_selected +'.json', 'r') as device_file:
         devices = json.load(device_file)
 
     # Define netmiko exception for try/except block to prevent python script from crashing
@@ -74,10 +74,7 @@ def pm_function():
                 output=connection.send_command(show)
                 print(output)
                 file.write(connection.find_prompt() + show +"\n" + output + '\n')
-                log.write(dts + ' ' + connection.find_prompt() + show + '\n')
-            
-                
-                
+                log.write(dts + ' ' + connection.find_prompt() + show + '\n') 
             # Closing the ssh connection
             connection.disconnect()
 

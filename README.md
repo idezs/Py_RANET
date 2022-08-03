@@ -3,3 +3,4 @@
 # pyserial
 # paramiko
 # pandas
+# inquirer

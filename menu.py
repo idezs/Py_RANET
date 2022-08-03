@@ -1,5 +1,6 @@
 from pprint import pprint
 import inquirer
+import menu_selector
 
 def main_menu():
 
@@ -11,13 +12,13 @@ def main_menu():
 
     questions = [
         inquirer.List(
-            "YOU SELECTED : ",
+            "YOU SELECTED",
             message="WHAT YOU NEED TO DO?",
-            choices=["CGH_LLK_PM_AUTOMATION", "CGH_SAIMAI_PM_AUTOMATION",
-             "CGH_PAHOLYOTHIN_PM_AUTOMATION", "SCIPRK_PM_AUTOMATION",
-              "RMUTTO_PM_AUTOMATION", "TU_TAPRACHAN_PM_AUTOMATION"],
+            choices=["CGH_LLK_PM_AUTOMATION_JUNIPER", "CGH_SAIMAI_PM_AUTOMATION_JUNIPER",
+             "CGH_PAHOLYOTHIN_PM_AUTOMATION_JUNIPER", "SCIPRK_PM_AUTOMATION_CISCO",
+              "RMUTTO_PM_AUTOMATION_CISCO", "TU_TAPRACHAN_PM_AUTOMATION_CISCO"],
         ),
     ]
-
+    
     answers = inquirer.prompt(questions)
-    pprint(answers)
+    menu_selector.json_selector(answers['YOU SELECTED'])

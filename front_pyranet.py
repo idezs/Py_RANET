@@ -7,10 +7,10 @@ from __future__ import unicode_literals
 import banner
 import menu
 import cmp_output
-import cmd_collector
 
 print(banner.banner())
 menu.main_menu()
+
 
 #msg_cmp = cmp_output.cmp_files()
 
