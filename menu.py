@@ -14,11 +14,11 @@ def main_menu():
         inquirer.List(
             "YOU SELECTED",
             message="WHAT YOU NEED TO DO?",
-            choices=["CGH_LLK_PM_AUTOMATION_JUNIPER", "CGH_SAIMAI_PM_AUTOMATION_JUNIPER",
-             "CGH_PAHOLYOTHIN_PM_AUTOMATION_JUNIPER", "SCIPRK_PM_AUTOMATION_CISCO",
-              "RMUTTO_PM_AUTOMATION_CISCO", "TU_TAPRACHAN_PM_AUTOMATION_CISCO"],
+            choices=["SERIAL_INITIAL_SWITCH_IOS_DEVICES", "PM_CGH_LLK_AUTOMATION_JUNIPER", "PM_CGH_SAIMAI_AUTOMATION_JUNIPER",
+             "PM_CGH_PAHOLYOTHIN_AUTOMATION_JUNIPER", "PM_SCIPRK_AUTOMATION_CISCO",
+              "PM_RMUTTO_AUTOMATION_CISCO", "PM_TU_TAPRACHAN_AUTOMATION_CISCO"],
         ),
     ]
     
     answers = inquirer.prompt(questions)
-    menu_selector.json_selector(answers['YOU SELECTED'])
+    menu_selector.icon_selector(answers['YOU SELECTED'])
